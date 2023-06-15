@@ -10,7 +10,7 @@ class Car:
 
     def brake(self, deceleration):
         if self.speed > deceleration:
-            self.speed -= deceleration
+            self.speed += deceleration
         else:
             self.speed = 0
 
@@ -18,4 +18,8 @@ class Car:
         return self.speed
 
 car = Car("Nissan", "Maxima", 2017)
-print(car.accelerate(200))
+car.accelerate(200)
+car.accelerate(50)
+car.brake(10)
+car.brake(200)
+print(car.speed)
